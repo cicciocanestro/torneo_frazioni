@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Torneo Frazioni Castiglion Fiorentino 2026</title>
+    
+    <!-- PWA Metadata and Icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#15803d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Torneo Frazioni" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <style>
+      /* Prevent elastic bounce scrolling on mobile devices to act like a real native app */
+      body {
+        overscroll-behavior-y: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

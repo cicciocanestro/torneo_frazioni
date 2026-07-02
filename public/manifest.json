@@ -1,0 +1,22 @@
+{
+  "name": "Torneo Frazioni Castiglion Fiorentino 2026",
+  "short_name": "Torneo Frazioni",
+  "description": "App ufficiale del Torneo delle Frazioni di Castiglion Fiorentino 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#15803d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

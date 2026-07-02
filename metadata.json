@@ -1,0 +1,6 @@
+{
+  "name": "Torneo Frazioni Castiglion Fiorentino",
+  "description": "Progressive Web App (PWA) per il Torneo Frazioni di Castiglion Fiorentino 2026. Calendario, classifiche e marcatori in tempo reale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "Team": {
+      "title": "Team",
+      "description": "A team participating in the tournament",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the team" },
+        "group": { "type": "string", "enum": ["A", "B"], "description": "The group of the team" },
+        "logo": { "type": "string", "description": "URL or icon identifier of the team logo" },
+        "edition": { "type": "integer", "description": "Year of the edition" }
+      },
+      "required": ["name", "group", "edition"]
+    },
+    "Match": {
+      "title": "Match",
+      "description": "A match played or scheduled in the tournament",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "format": "date", "description": "Match date (YYYY-MM-DD)" },
+        "time": { "type": "string", "description": "Match time (HH:MM)" },
+        "homeTeam": { "type": "string", "description": "Name of the home team" },
+        "awayTeam": { "type": "string", "description": "Name of the away team" },
+        "homeGoals": { "type": "integer", "description": "Goals scored by home team" },
+        "awayGoals": { "type": "integer", "description": "Goals scored by away team" },
+        "group": { "type": "string", "enum": ["A", "B"], "description": "The group of the match" },
+        "status": { "type": "string", "enum": ["scheduled", "completed"], "description": "Match status" },
+        "edition": { "type": "integer", "description": "Year of the edition" },
+        "scorers": {
+          "type": "array",
+          "description": "List of scorers in the match",
+          "items": {
+            "type": "object",
+            "properties": {
+              "player": { "type": "string" },
+              "team": { "type": "string" },
+              "goals": { "type": "integer" }
+            }
+          }
+        }
+      },
+      "required": ["date", "time", "homeTeam", "awayTeam", "group", "status", "edition"]
+    },
+    "Scorer": {
+      "title": "Scorer",
+      "description": "A player who scored goals",
+      "type": "object",
+      "properties": {
+        "player": { "type": "string", "description": "Player name" },
+        "team": { "type": "string", "description": "Team name" },
+        "goals": { "type": "integer", "description": "Total goals scored" },
+        "edition": { "type": "integer", "description": "Year of the edition" }
+      },
+      "required": ["player", "team", "goals", "edition"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "General settings of the tournament",
+      "type": "object",
+      "properties": {
+        "edition": { "type": "integer", "description": "Active year edition" },
+        "tournamentName": { "type": "string", "description": "Tournament name" },
+        "logo": { "type": "string", "description": "Logo URL of the tournament" }
+      },
+      "required": ["edition", "tournamentName"]
+    }
+  },
+  "firestore": {
+    "teams": { "schema": "Team", "description": "Teams participating in the tournament" },
+    "matches": { "schema": "Match", "description": "List of matches scheduled and played" },
+    "scorers": { "schema": "Scorer", "description": "Tournament scorers table" },
+    "settings": { "schema": "Setting", "description": "Tournament metadata and settings" }
+  }
+}
